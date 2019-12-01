@@ -1,0 +1,68 @@
+﻿@model Domain.Venda
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h4>Vendas</h4>
+<hr />
+<div class="col-md-4">
+    <table>
+        <tr>
+            <td>
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <div id="Cliente" class="form-group">
+                            <label>Cliente:</label>
+                            <select asp-items="@ViewBag.Clientes" name="drpClientes" class="form-control">
+                                <option selected disabled> --- SELECIONE ---</option>
+                            </select>
+                        </div>
+                        <div id="Funcionario" class="form-group">
+                            <label>Funcionario:</label>
+                            <select asp-items="@ViewBag.Funcionarios" name="drpFuncionarios" class="form-control">
+                                <option selected disabled> --- SELECIONE ---</option>
+                            </select>
+                        </div>
+                        <div id="Produto" class="form-group">
+                            <label>Produto:</label>
+                            <select asp-items="@ViewBag.Produtos" name="drpProdutos" class="form-control">
+                                <option selected disabled> --- SELECIONE ---</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Cadastrar" class="btn btn-primary" />
+                        </div>
+                    </div>
+
+                </form>
+            </td>
+  
+                <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Cliente</th>
+                                <th scope="col">Funcionario</th>
+                                <th scope="col">Produtos</th>
+                                <th scope="col">Quantidade</th>
+                                <th scope="col">Preço</th>
+                                <th scope="col">CriadoEm</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                           
+                        </tbody>
+                    </table>
+           
+    </table>
+    </div> 
+   
+
+
+    <div>
+        <a asp-action="Index">Voltar</a>
+    </div>
+
+
+

@@ -1,0 +1,41 @@
+﻿--- Instruções Sobre o EF Core ---
+
+1 - Instalar o EF Core no projeto
+ -- Install-Package Microsoft.EntityFramework.SqlServer -Version: 2.1.11
+
+2 - Criar as classes de modelo
+
+3 - Classe de contexto
+  - Herdar do DbContext
+  - Criar os Dbset
+  - Criar o Dbset de cada classe de modelo
+
+4 - Configurar o serviço do Banco de Dados na classe statup.cs(MVC)
+
+      services.AddScoped<ProdutoDAO>();
+            services.AddDbContext<Context>(options => options.UseSqlServer
+            (Configuration.GetConnectionString("EcommerceConnection")));
+
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+5 - Criar a string de conexão no arquivo appsettings.json
+
+    - {
+  "Logging": {
+    "LogLevel": {
+      "Default": "Warning"
+    }
+  },
+  "AllowedHosts": "*",
+  "ConnectionStrings": {
+    "EcommerceConnection":
+      "Server = (localdb)\\mssqllocaldb;Database=DbEcommerce;Trusted_Connection=True;"
+  }
+}
+
+
+6 - Adicionar a migração
+  - Add-Migration NomeMigração
+ 
+7 - Atualizar o banco
+  - Update-Database -verbose

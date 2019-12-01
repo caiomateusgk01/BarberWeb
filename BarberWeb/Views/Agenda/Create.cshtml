@@ -1,0 +1,48 @@
+﻿@model Domain.Agenda
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h4>Agenda</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div id="Cliente" class="form-group">
+                <label>Cliente:</label>
+                <select asp-items="@ViewBag.Clientes"
+                        class="form-control" name="drpCliente">
+                    <option> -- SELECIONE -- </option>
+                </select>
+            </div>
+            <div id="Funcionario" class="form-group">
+                <label>Funcionario:</label>
+                <select asp-items="@ViewBag.Funcionarios"
+                        class="form-control" name="drpFuncionario">
+                    <option> -- SELECIONE -- </option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="HrInicial" class="control-label"></label>
+                <input asp-for="HrInicial" class="form-control" />
+                <span asp-validation-for="HrInicial" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Data" class="control-label"></label>
+                <input asp-for="Data" class="form-control" />
+                <span asp-validation-for="Data" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Cadastrar" class="btn btn-success" />
+                <input type="submit" asp-action="Index" value="Listar" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Voltar</a>
+</div>
+
