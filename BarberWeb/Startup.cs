@@ -42,6 +42,7 @@ namespace BarberWeb
             services.AddHttpContextAccessor();
             services.AddScoped<VendaItensDAO>();
             services.AddScoped<UsuarioDAO>();
+            services.AddScoped<CategoriaDAO>();
 
             services.AddDbContext<Context>
                 (options => options.UseSqlServer

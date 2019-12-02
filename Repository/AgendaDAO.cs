@@ -19,15 +19,15 @@ namespace Repository
         public List<Agenda> ListarTodos() => _context.Agendas.Include("Cliente").Include("Funcionario").ToList();
 
 
-        public  bool Cadastrar(Agenda a)
+        public bool Cadastrar(Agenda a)
         {
-            if (BuscarAgendamentoDataFuncionario(a) != null)
+            if (BuscarAgendamentoDataFuncionario(a) == null)
             {
-                return false;
+                _context.Agendas.Add(a);
+                _context.SaveChanges();
+                return true;
             }
-            _context.Agendas.Add(a);
-            _context.SaveChanges();
-            return true;
+            return false;
         }
 
         public Agenda BuscarCFPorId(Agenda a)

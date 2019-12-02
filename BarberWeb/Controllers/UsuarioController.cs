@@ -79,7 +79,7 @@ namespace BarberWeb.Controllers
                         isPersistent: false);
                     if (_usuarioDAO.Cadastrar(u))
                     {
-                        return RedirectToAction("Index");
+                        return RedirectToAction("Login");
                     }
                     ModelState.AddModelError("", "Este e-mail já está sendo utilizado!");
                 }

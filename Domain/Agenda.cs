@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    [Table("Agenda")]
+    [Table("Agendas")]
     public class Agenda
     {
         public Agenda()
@@ -21,8 +21,8 @@ namespace Domain
         [Display(Name = "Hora Inicial")]
         [Required(ErrorMessage = "Campo Obrigatorio")]
         public string HrInicial { get; set; }
-        public Cliente Cliente { get; set; }
-        public Funcionario Funcionario { get; set; }
+        public  Cliente Cliente { get; set; }
+        public  Funcionario Funcionario { get; set; }
         public DateTime Data { get; set; }
 
         public override string ToString()

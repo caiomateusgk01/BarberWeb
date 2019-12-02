@@ -5,9 +5,11 @@ VisualStudioVersion = 16.0.29123.88
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BarberWeb", "BarberWeb\BarberWeb.csproj", "{DD5201FD-C846-4B34-A4F2-D4DB90A7AA8E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{A0F54DE6-226C-48AE-93E0-3EFDA405191B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{A0F54DE6-226C-48AE-93E0-3EFDA405191B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{1C802A41-A5C4-4083-97B2-82DD441218CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository", "Repository\Repository.csproj", "{1C802A41-A5C4-4083-97B2-82DD441218CB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{0F98D4C0-4209-4DFD-8AC4-D46DE83A0C98}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{1C802A41-A5C4-4083-97B2-82DD441218CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C802A41-A5C4-4083-97B2-82DD441218CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C802A41-A5C4-4083-97B2-82DD441218CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F98D4C0-4209-4DFD-8AC4-D46DE83A0C98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F98D4C0-4209-4DFD-8AC4-D46DE83A0C98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F98D4C0-4209-4DFD-8AC4-D46DE83A0C98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F98D4C0-4209-4DFD-8AC4-D46DE83A0C98}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

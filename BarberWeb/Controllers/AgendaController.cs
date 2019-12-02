@@ -77,7 +77,7 @@ namespace BarberWeb.Controllers
                 agenda.Funcionario = _funcionarioDAO.BuscarPorId(drpFuncionario);
                 _context.Add(agenda);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index");
             }
             return View(agenda);
         }

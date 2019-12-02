@@ -155,7 +155,7 @@ using Domain;
             WriteLiteral("</td>\r\n                    <td>\r\n                        ");
             EndContext();
             BeginContext(1028, 112, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "edade3d9fe6842ba9a5c824cd3e294af", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3280134c04814b4ab5f9878eae86ba95", async() => {
                 BeginContext(1129, 7, true);
                 WriteLiteral("Remover");
                 EndContext();
@@ -193,7 +193,7 @@ using Domain;
             WriteLiteral("\r\n                    </td>\r\n                    <td>\r\n                        ");
             EndContext();
             BeginContext(1219, 109, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9fd4ea2b81f64cf49e5e74fa85e086f9", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8de463cf2de64a359acdfd556180b165", async() => {
                 BeginContext(1317, 7, true);
                 WriteLiteral("Alterar");
                 EndContext();

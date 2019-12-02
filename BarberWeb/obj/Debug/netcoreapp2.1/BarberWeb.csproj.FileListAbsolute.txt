@@ -51,3 +51,8 @@ C:\Users\Caio Mateus\source\repos\BarberWeb\BarberWeb\obj\Debug\netcoreapp2.1\Ra
 C:\Users\Caio Mateus\source\repos\BarberWeb\BarberWeb\obj\Debug\netcoreapp2.1\Razor\Views\Agenda\Details.g.cshtml.cs
 C:\Users\Caio Mateus\source\repos\BarberWeb\BarberWeb\obj\Debug\netcoreapp2.1\Razor\Views\Agenda\Edit.g.cshtml.cs
 C:\Users\Caio Mateus\source\repos\BarberWeb\BarberWeb\obj\Debug\netcoreapp2.1\Razor\Views\Agenda\Index.g.cshtml.cs
+C:\Users\Caio Mateus\source\repos\BarberWeb\BarberWeb\obj\Debug\netcoreapp2.1\Razor\Views\Categoria\Create.g.cshtml.cs
+C:\Users\Caio Mateus\source\repos\BarberWeb\BarberWeb\obj\Debug\netcoreapp2.1\Razor\Views\Categoria\Delete.g.cshtml.cs
+C:\Users\Caio Mateus\source\repos\BarberWeb\BarberWeb\obj\Debug\netcoreapp2.1\Razor\Views\Categoria\Details.g.cshtml.cs
+C:\Users\Caio Mateus\source\repos\BarberWeb\BarberWeb\obj\Debug\netcoreapp2.1\Razor\Views\Categoria\Edit.g.cshtml.cs
+C:\Users\Caio Mateus\source\repos\BarberWeb\BarberWeb\obj\Debug\netcoreapp2.1\Razor\Views\Categoria\Index.g.cshtml.cs
