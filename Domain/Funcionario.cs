@@ -21,6 +21,10 @@ namespace Domain
         [MinLength(5, ErrorMessage = "No mínimo 5 caracteres!")]
         [MaxLength(40, ErrorMessage = "No máximo 60 caracteres!")]
         public string Nome { get; set; }
+
+        [Display(Name = "RG")]
+        [Required(ErrorMessage = "Campo Obrigatorio")]
+        public string Rg { get; set; }
         [Display(Name = "CPF")]
         [Required(ErrorMessage = "Campo Obrigatorio")]
         public string Cpf { get; set; }
@@ -42,7 +46,7 @@ namespace Domain
 
         public override string ToString()
         {
-            return "Nome: " + Nome + " | CPF: " + Cpf + " | Telefone: " + Telefone + " | Horário Atual: " + CriadoEm +
+            return "Nome: " + Nome + "  | CPF: " + Cpf + " | RG: " + Rg + "  | Telefone: " + Telefone + " | Horário Atual: " + CriadoEm +
                 "| E-mail: " + Email + "| Endereco " + Endereco;
         }
 

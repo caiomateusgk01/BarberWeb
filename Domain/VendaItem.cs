@@ -17,6 +17,7 @@ namespace Domain
         }
         [Key]
         public int Id { get; set; }
+        public int? ProdutoId { get; set; }
         public Produto Produtos { get; set; }
         public int Quantidade { get; set; }
         public double Preco { get; set; }

@@ -19,15 +19,13 @@ namespace Domain
         [MaxLength(40, ErrorMessage = "No máximo 40 caracteres!")]
         public string Nome { get; set; }
         [Required(ErrorMessage = "Campo Obrigatorio")]
-        [Display(Name = "Nome da descrição:")]
-        public string Descricao { get; set; }
-        [Required(ErrorMessage = "Campo Obrigatorio")]
         [Display(Name = "Preço do produto:")]
         public double? Preco { get; set; }
         [Required(ErrorMessage = "Campo Obrigatorio")]
         [Display(Name = "Quantidade do produto:")]
         [Range(1, 1000, ErrorMessage = "Os valores devem estar entre 1 e 1000")]
         public int Quantidade { get; set; }
+        [Display(Name = "Categoria do produto:")]
         public Categoria Categoria { get; set; }
         public DateTime criadoEm { get; set; }
 

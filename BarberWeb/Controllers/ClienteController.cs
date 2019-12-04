@@ -1,84 +1,153 @@
-﻿using Domain;
-using Microsoft.AspNetCore.Mvc;
-using Repository;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using Domain;
+using Repository;
 
 namespace BarberWeb.Controllers
 {
     public class ClienteController : Controller
     {
-        private readonly ClienteDAO _clienteDAO;
-        public ClienteController(ClienteDAO clienteDAO)
+        private readonly Context _context;
+
+        public ClienteController(Context context)
         {
-            _clienteDAO = clienteDAO;
-        }
-        public ActionResult Index()
-        {
-            ViewBag.DataHora = DateTime.Now;
-            return View(_clienteDAO.ListarTodos());
+            _context = context;
         }
 
-        public ActionResult Listar()
+        // GET: Cliente
+        public async Task<IActionResult> Index()
         {
-            ViewBag.DataHora = DateTime.Now;
-            return View(_clienteDAO.ListarTodos());
+            return View(await _context.Clientes.ToListAsync());
         }
 
-        public IActionResult Cadastrar()
+        // GET: Cliente/Details/5
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var cliente = await _context.Clientes
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (cliente == null)
+            {
+                return NotFound();
+            }
+
+            return View(cliente);
+        }
+
+        // GET: Cliente/Create
+        public IActionResult Create()
         {
             return View();
         }
+
+        // POST: Cliente/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        public IActionResult Cadastrar(Cliente c)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("Id,Nome,Rg,Cpf,Telefone,Email,Endereco,Criadoem")] Cliente cliente)
         {
             if (ModelState.IsValid)
             {
-                if (_clienteDAO.Cadastrar(c))
-                {
-                    return RedirectToAction("Index");
-                }
-                ModelState.AddModelError("", "Esse Cliente já existe");
-                return View(c);
+                _context.Add(cliente);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
             }
-            return View(c);
+            return View(cliente);
         }
 
-        public IActionResult ListarClientes()
+        // GET: Cliente/Edit/5
+        public async Task<IActionResult> Edit(int? id)
         {
-            var produtos = _clienteDAO.ListarTodos();
-            _clienteDAO.ListarTodos();
-            return View(produtos);
-
-        }
-
-        public IActionResult Remover(int? id)
-        {
-            if (id != null)
+            if (id == null)
             {
-
-                _clienteDAO.RemoverCliente(id);
+                return NotFound();
             }
-            else
+
+            var cliente = await _context.Clientes.FindAsync(id);
+            if (cliente == null)
             {
-                //Redirecionar para uma página de erro
+                return NotFound();
             }
-            //Remover o produto
-            return RedirectToAction("Index");
+            return View(cliente);
         }
 
-        public IActionResult Edit()
-        {
-            return View("Edit");
-        }
+        // POST: Cliente/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        public IActionResult Edit(int? id)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Rg,Cpf,Telefone,Email,Endereco,Criadoem")] Cliente cliente)
         {
-            //Remover o produto
-            return RedirectToAction("Edit");
+            if (id != cliente.Id)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(cliente);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!ClienteExists(cliente.Id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            return View(cliente);
         }
 
+        // GET: Cliente/Delete/5
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var cliente = await _context.Clientes
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (cliente == null)
+            {
+                return NotFound();
+            }
+
+            return View(cliente);
+        }
+
+        // POST: Cliente/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var cliente = await _context.Clientes.FindAsync(id);
+            _context.Clientes.Remove(cliente);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+        private bool ClienteExists(int id)
+        {
+            return _context.Clientes.Any(e => e.Id == id);
+        }
     }
 }

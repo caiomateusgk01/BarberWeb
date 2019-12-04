@@ -49,8 +49,8 @@ namespace BarberWeb.Controllers
         [HttpPost]
         public IActionResult BuscarCep(Usuario u)
         {
-            string url = "https://viacep.com.br/ws/" +
-                u.Endereco.Cep + "/json/";
+            string url = "https://api.postmon.com.br/v1/cep/" +
+                u.Endereco.Cep;
             WebClient client = new WebClient();
             TempData["Endereco"] = client.DownloadString(url);
 

@@ -19,7 +19,10 @@ namespace Domain
         }
         [Key]
         public int Id { get; set; }
+
+        public int? ClienteId { get; set; }
         public virtual Cliente idCliente { get; set; }
+        public int? FuncionarioId { get; set; }
         public virtual Funcionario idFuncionario { get; set; }
         public virtual Produto Produtos { get; set; }
         public virtual List<VendaItem> VendasItem { get; set; }

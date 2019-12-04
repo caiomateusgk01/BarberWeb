@@ -45,7 +45,7 @@ namespace BarberWeb
             services.AddScoped<CategoriaDAO>();
 
             services.AddDbContext<Context>
-                (options => options.UseSqlServer
+            (options => options.UseSqlServer
             (Configuration.GetConnectionString
             ("BarberWebConnection")));
 
@@ -89,7 +89,7 @@ namespace BarberWeb
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Cliente}/{action=Index}/{id?}");
+                    template: "{controller=Produto}/{action=Index}/{id?}");
             });
         }
     }
