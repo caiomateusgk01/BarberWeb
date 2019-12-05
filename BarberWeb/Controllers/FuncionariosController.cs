@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Domain;
 using Repository;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BarberWeb.Controllers
 {
+    [Authorize]
     public class FuncionariosController : Controller
     {
         private readonly Context _context;

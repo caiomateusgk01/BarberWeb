@@ -2,6 +2,8 @@
  * Cadastro de Vendas
  */
 
+//var linkApi = "https://localhost:5001/api/"
+var linkApi = "https://localhost:44399/api/"
 var listaDeProdutos = [];
 
 
@@ -32,7 +34,7 @@ $("#btnAddItem").click(function () {
 
     //Cria um objeto VendaItem
     let vendaItem = {
-        ProdutoId: idProduto,
+        ProdutosProdutoId: idProduto,
         Quantidade: Produtos_Quantidade,
         Preco: Produtos_Preco
     };
@@ -87,12 +89,12 @@ $("#frmVenda").on("submit", function (event) {
 
     $.ajax({
         type: "post",
-        url: `https://localhost:5001/api/Venda`,
+        url: `${linkApi}Venda`,
         dataType: "json",
         contentType: "application/json",
         data: JSON.stringify(venda),
         success: function (dados) {
-            alert(dados.msg)
+            alert("Venda realizada com sucesso!")
             limparFormVenda();
         },
         error: function (dados) {
@@ -110,10 +112,11 @@ function limparFormVendaParcialProdutos() {
 }
 
 function limparFormVenda() {
+    listaDeProdutos = [];
     $('#idCliente').prop("selectedIndex", 0).change();
     $('#idFuncionario').prop("selectedIndex", 0).change();
     $('#Produtos').prop("selectedIndex", 0).change();
     $("#Produtos_Quantidade").val("");
     $("#Produtos_Preco").val("");
-    $("#tblItensBody").empty()
+    $("#tblItensBody").empty();
 }

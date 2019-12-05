@@ -13,11 +13,16 @@ namespace Domain
         public VendaItem()
         {
             Criadoem = DateTime.Now;
-            Produtos = new Produto();
         }
         [Key]
         public int Id { get; set; }
-        public int? ProdutoId { get; set; }
+        
+        public int VendaId { get; set; }
+        [ForeignKey("VendaId")]
+        public virtual Venda Venda { get; set; }
+
+        public int? ProdutosProdutoId { get; set; }
+        [ForeignKey("ProdutosProdutoId")]
         public Produto Produtos { get; set; }
         public int Quantidade { get; set; }
         public double Preco { get; set; }

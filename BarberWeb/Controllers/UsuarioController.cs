@@ -69,8 +69,7 @@ namespace BarberWeb.Controllers
                     UserName = u.Email
                 };
                 //Cadastra o usuário na tabela do Identity
-                IdentityResult result = await _userManager.
-                    CreateAsync(usuarioLogado, u.Senha);
+                IdentityResult result = await _userManager.CreateAsync(usuarioLogado, u.Senha);
                 //Testar o resultado do cadastro
                 if (result.Succeeded)
                 {
@@ -112,7 +111,7 @@ namespace BarberWeb.Controllers
                 u.Senha, true, lockoutOnFailure: false);
             if (result.Succeeded)
             {
-                return RedirectToAction("Create", "Funcionario");
+                return RedirectToAction("Create", "Funcionarios");
             }
             ModelState.AddModelError("", "Falha no login!");
             return View();

@@ -44,7 +44,7 @@ namespace BarberWeb.Controllers {
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (venda == null) {
                 return NotFound();
-            }
+            } 
 
             return View(venda);
         }

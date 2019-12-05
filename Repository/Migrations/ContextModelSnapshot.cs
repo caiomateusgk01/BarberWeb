@@ -284,7 +284,7 @@ namespace Repository.Migrations
 
                     b.Property<int>("Quantidade");
 
-                    b.Property<int?>("VendaId");
+                    b.Property<int>("VendaId");
 
                     b.HasKey("Id");
 
@@ -458,9 +458,10 @@ namespace Repository.Migrations
                         .WithMany()
                         .HasForeignKey("ProdutosProdutoId");
 
-                    b.HasOne("Domain.Venda")
+                    b.HasOne("Domain.Venda", "Venda")
                         .WithMany("VendasItem")
-                        .HasForeignKey("VendaId");
+                        .HasForeignKey("VendaId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

@@ -13,8 +13,6 @@ namespace Domain
         public Agenda()
         {
             Data = DateTime.Now;
-            Cliente = new Cliente();
-            Funcionario = new Funcionario();
         }
         [Key]
         public int Id { get; set; }

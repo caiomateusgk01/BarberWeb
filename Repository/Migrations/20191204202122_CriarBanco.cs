@@ -342,11 +342,11 @@ namespace Repository.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    VendaId = table.Column<int>(nullable: false),
                     ProdutosProdutoId = table.Column<int>(nullable: true),
                     Quantidade = table.Column<int>(nullable: false),
                     Preco = table.Column<double>(nullable: false),
-                    Criadoem = table.Column<DateTime>(nullable: false),
-                    VendaId = table.Column<int>(nullable: true)
+                    Criadoem = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -362,7 +362,7 @@ namespace Repository.Migrations
                         column: x => x.VendaId,
                         principalTable: "Vendas",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(

@@ -49,9 +49,9 @@ namespace Repository
             _context.Clientes.Remove(BuscarPorId(id));
             _context.SaveChanges();
         }
-        public void AlterarCliente(int? id)
+        public void AlterarCliente(Cliente c)
         {
-            _context.Clientes.Update(BuscarPorId(id));
+            _context.Clientes.Update(c);
             _context.SaveChanges();
         }
     }

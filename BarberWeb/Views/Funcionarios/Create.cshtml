@@ -4,7 +4,21 @@
     ViewData["Title"] = "Create";
 }
 
-<h2>Create</h2>
+<script type="text/javascript">
+            $(document).ready(function(){
+                $('#cpf').mask('000.000.000-00');
+            });
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#rg').mask('00.000.000-0');
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#telefone').mask('(00)00000-0000');
+    });
+</script>
 
 <h4>Funcionario</h4>
 <hr />
@@ -14,22 +28,22 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Nome" class="control-label"></label>
-                <input asp-for="Nome" class="form-control" />
+                <input  asp-for="Nome" class="form-control" />
                 <span asp-validation-for="Nome" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Rg" class="control-label"></label>
-                <input asp-for="Rg" class="form-control" />
+                <input id="rg" asp-for="Rg" class="form-control" />
                 <span asp-validation-for="Rg" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Cpf" class="control-label"></label>
-                <input asp-for="Cpf" class="form-control" />
+                <input  id="cpf" asp-for="Cpf" class="form-control" />
                 <span asp-validation-for="Cpf" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Telefone" class="control-label"></label>
-                <input asp-for="Telefone" class="form-control" />
+                <input  id="telefone" asp-for="Telefone" class="form-control" />
                 <span asp-validation-for="Telefone" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -48,13 +62,14 @@
                 <span asp-validation-for="CriadoEm" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Cadastrar" class="btn btn-success" />
+                <input type="submit" asp-action="Index" value="Listar" class="btn btn-success" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Voltar</a>
 </div>
 

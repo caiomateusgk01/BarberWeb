@@ -13,10 +13,12 @@ namespace BarberWeb.Controllers
     public class ProdutoController : Controller
     {
         private readonly Context _context;
+        private readonly CategoriaDAO _categoriaDAO;
 
-        public ProdutoController(Context context)
+        public ProdutoController(Context context, CategoriaDAO categoriaDAO)
         {
             _context = context;
+            _categoriaDAO = categoriaDAO;
         }
 
         // GET: Produto
@@ -46,6 +48,8 @@ namespace BarberWeb.Controllers
         // GET: Produto/Create
         public IActionResult Create()
         {
+            ViewBag.Categorias = new SelectList
+             (_categoriaDAO.ListarTodos(), "Id", "Nome");
             return View();
         }
 
@@ -54,10 +58,13 @@ namespace BarberWeb.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ProdutoId,Nome,Preco,Quantidade,criadoEm")] Produto produto)
+        public async Task<IActionResult> Create([Bind("ProdutoId,Nome,Preco,Quantidade,criadoEm")] Produto produto, int drpCategoria)
         {
+            ViewBag.Categorias = new SelectList
+             (_categoriaDAO.ListarTodos(), "Id", "Nome");
             if (ModelState.IsValid)
             {
+                produto.Categoria = _categoriaDAO.BuscarPorId(drpCategoria);
                 _context.Add(produto);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

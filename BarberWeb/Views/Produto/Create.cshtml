@@ -27,19 +27,27 @@
                 <input asp-for="Quantidade" class="form-control" />
                 <span asp-validation-for="Quantidade" class="text-danger"></span>
             </div>
+            <div id="Categoria" class="form-group">
+                <label>Categoria:</label>
+                <select asp-items="@ViewBag.Categorias"
+                        class="form-control" name="drpCategoria">
+                    <option> -- SELECIONE -- </option>
+                </select>
+            </div>
             <div class="form-group">
                 <label asp-for="criadoEm" class="control-label"></label>
                 <input asp-for="criadoEm" class="form-control" />
                 <span asp-validation-for="criadoEm" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Cadastrar" class="btn btn-success" />
+                <input type="submit" asp-action="Index" value="Listar" class="btn btn-success" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Voltar</a>
 </div>
 

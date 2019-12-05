@@ -11,6 +11,7 @@ namespace Domain
     public class Cliente
     {
 
+
         public Cliente()
         {
             Criadoem = DateTime.Now;
