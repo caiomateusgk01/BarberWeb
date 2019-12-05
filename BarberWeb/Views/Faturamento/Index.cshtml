@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Faturamento do Mês";
+
+    var qtdeVendasNoMes = ViewBag.qtdeVendasNoMes;
+    var valorVendasNoMes = ViewBag.valorVendasNoMes;
+    var qtdeItensVendidosNoMes = ViewBag.qtdeItensVendidosNoMes;
+    var valorMediaDeVendasDiaria = ViewBag.valorMediaDeVendasDiaria;
+}
+
+<h1 class="display-4 d-none d-sm-block">Faturamento do Mes</h1>
+<p class="lead d-none d-sm-block">Valores considerados a partir do dia 01/@DateTime.Now.Month/@DateTime.Now.Year até o dia @DateTime.Now.ToShortDateString().</p>
+
+<div class="row mb-3">
+    <div class="col-xl-3 col-sm-6 py-2">
+        <div class="card bg-success text-white h-100">
+            <div class="card-body bg-success">
+                <h6 class="text-uppercase">Quantidade de Vendas</h6>
+                <h1 class="display-4">@qtdeVendasNoMes</h1>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-sm-6 py-2">
+        <div class="card text-white bg-danger h-100">
+            <div class="card-body bg-danger">
+                <h6 class="text-uppercase">Valor vendido</h6>
+                <h1 class="display-4">R$@valorVendasNoMes</h1>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-sm-6 py-2">
+        <div class="card text-white bg-info h-100">
+            <div class="card-body bg-info">
+                <h6 class="text-uppercase">Quantidade de itens vendidos</h6>
+                <h1 class="display-4">@qtdeItensVendidosNoMes</h1>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-sm-6 py-2">
+        <div class="card text-white bg-warning h-100">
+            <div class="card-body">
+                <h6 class="text-uppercase">Média de Vendas por dia</h6>
+                <h1 class="display-4">@valorMediaDeVendasDiaria</h1>
+            </div>
+        </div>
+    </div>
+</div>

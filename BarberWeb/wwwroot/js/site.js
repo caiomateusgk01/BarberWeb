@@ -2,8 +2,8 @@
  * Cadastro de Vendas
  */
 
-//var linkApi = "https://localhost:5001/api/"
-var linkApi = "https://localhost:44399/api/"
+var linkApi = "https://localhost:5001/api/"
+//var linkApi = "https://localhost:44399/api/"
 var listaDeProdutos = [];
 
 
@@ -51,7 +51,7 @@ $("#btnAddItem").click(function () {
     </tr>`);
 
     //Limpa os campos para a inserção de novos..
-    
+    limparFormVendaParcialProdutos();
 });
 
 /**

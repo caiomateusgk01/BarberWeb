@@ -61,3 +61,4 @@ C:\Users\Caio Mateus\source\repos\BarberWeb\BarberWeb\obj\Debug\netcoreapp2.1\Ra
 C:\Users\Caio Mateus\source\repos\BarberWeb\BarberWeb\obj\Debug\netcoreapp2.1\Razor\Views\Clientes\Edit.g.cshtml.cs
 C:\Users\Caio Mateus\source\repos\BarberWeb\BarberWeb\obj\Debug\netcoreapp2.1\Razor\Views\Clientes\Index.g.cshtml.cs
 C:\Users\Caio Mateus\source\repos\BarberWeb\BarberWeb\obj\Debug\netcoreapp2.1\Razor\Views\Clientes\Home.g.cshtml.cs
+C:\Users\Caio Mateus\source\repos\BarberWeb\BarberWeb\obj\Debug\netcoreapp2.1\Razor\Views\Faturamento\Index.g.cshtml.cs
